@@ -65,12 +65,14 @@ elements.searchResPages.addEventListener('click', e => {
 const controlRecipe = async () => {
     // Get ID from url
     const id = window.location.hash.replace('#', '');
-    console.log(id);
 
     if (id) {
         // Prepare UI for changes
         recipeView.clearRecipe();
         renderLoader(elements.recipe);
+
+        // Highligh selected search item
+        if (state.search) searchView.highlightSelected(id);
 
         // Create new recipe object
         state.recipe = new Recipe(id);
@@ -78,8 +80,8 @@ const controlRecipe = async () => {
         try {
             // Get recipe data and parse ingredients
             await state.recipe.getRecipe();
-            console.log(state.recipe.ingredient);
             state.recipe.parseIngredients();
+            console.log(state.recipe.ingredients);
 
             // calculate servings and time
             state.recipe.calcTime();
@@ -89,7 +91,8 @@ const controlRecipe = async () => {
             clearLoader();
             recipeView.renderRecipe(state.recipe);
         } catch (error) {
-            alert('Error processing recipes!');
+            console.log(error);
+            alert('Error processing recipe!');
         }
 
     }
