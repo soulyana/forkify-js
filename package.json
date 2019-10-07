@@ -4,6 +4,8 @@
   "description": "Recipe search engine project",
   "main": "index.js",
   "scripts": {
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,7 +19,13 @@
   },
   "homepage": "https://github.com/soulyana/forkify-js#readme",
   "devDependencies": {
-    "webpack": "^4.41.0"
+    "@babel/core": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.41.0",
+    "webpack-cli": "^3.3.9"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@babel/polyfill": "^7.6.0"
+  }
 }
