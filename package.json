@@ -1,0 +1,23 @@
+{
+  "name": "forkify",
+  "version": "1.0.0",
+  "description": "Recipe search engine project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soulyana/forkify-js.git"
+  },
+  "author": "Soulyana Lakew",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/soulyana/forkify-js/issues"
+  },
+  "homepage": "https://github.com/soulyana/forkify-js#readme",
+  "devDependencies": {
+    "webpack": "^4.41.0"
+  },
+  "dependencies": {}
+}
