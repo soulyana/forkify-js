@@ -3,6 +3,7 @@ import Search from './models/Search';
 import Recipe from './models/Recipe';
 import * as searchView from './views/searchView';
 import { elements, renderLoader, clearLoader } from './views/base';
+
 /**
  * Global State of the app
  * Search object
@@ -39,8 +40,6 @@ const controlSearch = async () => {
             alert('Somethng is wrong with the search...');
             clearLoader();
         }
-
-
     }
 }
 
@@ -48,6 +47,7 @@ elements.searchForm.addEventListener('submit', e => {
     e.preventDefault();
     controlSearch();
 });
+
 
 elements.searchResPages.addEventListener('click', e => {
     const btn = e.target.closest('.btn-inline');
@@ -73,8 +73,11 @@ const controlRecipe = async () => {
         state.recipe = new Recipe(id);
 
         try {
-            // Get recipe data
+            // Get recipe data and parse ingredients
             await state.recipe.getRecipe();
+            console.log(state.recipe.ingredient);
+            state.recipe.parseIngredients();
+
             // calculate servings and time
             state.recipe.calcTime();
             state.recipe.calcServings();
