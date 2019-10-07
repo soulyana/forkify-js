@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/js/index.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -93,7 +93,18 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("// Global app controller\n\n//# sourceURL=webpack:///./src/js/index.js?");
+eval("throw new Error(\"Module build failed (from ./node_modules/babel-loader/lib/index.js):\\nReferenceError: Unknown option: .preset. Check out https://babeljs.io/docs/en/babel-core/#options for more information about options.\\n    at throwUnknownError (/Users/soulyana.lakew/Documents/workspace/javascript/9-forkify/node_modules/@babel/core/lib/config/validation/options.js:123:11)\\n    at Object.keys.forEach.key (/Users/soulyana.lakew/Documents/workspace/javascript/9-forkify/node_modules/@babel/core/lib/config/validation/options.js:107:5)\\n    at Array.forEach (<anonymous>)\\n    at validateNested (/Users/soulyana.lakew/Documents/workspace/javascript/9-forkify/node_modules/@babel/core/lib/config/validation/options.js:83:21)\\n    at validate (/Users/soulyana.lakew/Documents/workspace/javascript/9-forkify/node_modules/@babel/core/lib/config/validation/options.js:74:10)\\n    at file (/Users/soulyana.lakew/Documents/workspace/javascript/9-forkify/node_modules/@babel/core/lib/config/config-chain.js:174:34)\\n    at cachedFunction (/Users/soulyana.lakew/Documents/workspace/javascript/9-forkify/node_modules/@babel/core/lib/config/caching.js:33:19)\\n    at buildRootChain (/Users/soulyana.lakew/Documents/workspace/javascript/9-forkify/node_modules/@babel/core/lib/config/config-chain.js:120:36)\\n    at loadPrivatePartialConfig (/Users/soulyana.lakew/Documents/workspace/javascript/9-forkify/node_modules/@babel/core/lib/config/partial.js:85:55)\\n    at Object.loadPartialConfig (/Users/soulyana.lakew/Documents/workspace/javascript/9-forkify/node_modules/@babel/core/lib/config/partial.js:110:18)\\n    at Object.<anonymous> (/Users/soulyana.lakew/Documents/workspace/javascript/9-forkify/node_modules/babel-loader/lib/index.js:144:26)\\n    at Generator.next (<anonymous>)\\n    at asyncGeneratorStep (/Users/soulyana.lakew/Documents/workspace/javascript/9-forkify/node_modules/babel-loader/lib/index.js:3:103)\\n    at _next (/Users/soulyana.lakew/Documents/workspace/javascript/9-forkify/node_modules/babel-loader/lib/index.js:5:194)\\n    at /Users/soulyana.lakew/Documents/workspace/javascript/9-forkify/node_modules/babel-loader/lib/index.js:5:364\\n    at new Promise (<anonymous>)\\n    at Object.<anonymous> (/Users/soulyana.lakew/Documents/workspace/javascript/9-forkify/node_modules/babel-loader/lib/index.js:5:97)\\n    at Object._loader (/Users/soulyana.lakew/Documents/workspace/javascript/9-forkify/node_modules/babel-loader/lib/index.js:224:18)\\n    at Object.loader (/Users/soulyana.lakew/Documents/workspace/javascript/9-forkify/node_modules/babel-loader/lib/index.js:60:18)\\n    at Object.<anonymous> (/Users/soulyana.lakew/Documents/workspace/javascript/9-forkify/node_modules/babel-loader/lib/index.js:55:12)\");\n\n//# sourceURL=webpack:///./src/js/index.js?");
+
+/***/ }),
+
+/***/ 0:
+/*!***********************************************!*\
+  !*** multi @babel-polyfill ./src/js/index.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("!(function webpackMissingModule() { var e = new Error(\"Cannot find module '@babel-polyfill'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }());\nmodule.exports = __webpack_require__(/*! ./src/js/index.js */\"./src/js/index.js\");\n\n\n//# sourceURL=webpack:///multi_@babel-polyfill_./src/js/index.js?");
 
 /***/ })
 
