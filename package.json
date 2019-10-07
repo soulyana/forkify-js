@@ -9,16 +9,8 @@
     "start": "webpack-dev-server --mode development --open",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/soulyana/forkify-js.git"
-  },
   "author": "Soulyana Lakew",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/soulyana/forkify-js/issues"
-  },
-  "homepage": "https://github.com/soulyana/forkify-js#readme",
   "devDependencies": {
     "@babel/core": "^7.6.2",
     "@babel/preset-env": "^7.6.2",
