@@ -20,7 +20,7 @@ export const highlightSelected = id => {
     document.querySelector(`.results__link[href*="${id}"]`).classList.add('results__link--active');
 };
 
-const limitRecipeTitle = (title, limit = 17) => {
+export const limitRecipeTitle = (title, limit = 17) => {
     const newTitle = [];
     if (title.length > limit) {
         title.split(' ').reduce((acc, cur) => {
@@ -45,7 +45,7 @@ const renderRecipe = recipe => {
         </figure>
         <div class="results__data">
             <h4 class="results__name">${limitRecipeTitle(recipe.title)}</h4>
-            <p class="results__author">${recipe.author}</p>
+            <p class="results__author">${recipe.publisher}</p>
         </div>
      </a>
     </li>
