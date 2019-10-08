@@ -6,37 +6,37 @@ export default class Recipe {
         this.id = id;
     }
 
-   async getRecipe() {
-       try {
-           const res = await axios(`https://www.food2fork.com/api/get?key=${key}&rId=${this.id}`);
+    async getRecipe() {
+        try {
+            const res = await axios(`https://www.food2fork.com/api/get?key=${key}&rId=${this.id}`);
             this.title = res.data.recipe.title;
             this.author = res.data.recipe.author;
             this.img = res.data.recipe.image_url;
             this.url = res.data.recipe.source_url;
             this.ingredients = res.data.recipe.ingredients;
-       } catch (error) {
-           console.log(error);
-           alert('Something went wrong :(');
-       }
-   }
+        } catch (error) {
+            console.log(error);
+            alert('Something went wrong :(');
+        }
+    }
 
-   calcTime() {
-       // Assuming that we need 15 min for each 3 ingredients
-       const numIng = this.ingredients.length;
-       const periods = Math.ceil(numIng / 3);
-       this.time = periods * 15; 
-   }
+    calcTime() {
+        // Assuming that we need 15 min for each 3 ingredients
+        const numIng = this.ingredients.length;
+        const periods = Math.ceil(numIng / 3);
+        this.time = periods * 15;
+    }
 
-   calcServings() {
-       this.servings = 4;
-   }
+    calcServings() {
+        this.servings = 4;
+    }
 
-   parseIngredients() {
-       const unitsLong = ['tablespoons', 'tablespoon', 'ounces', 'ounce', 'teaspoons', 'teaspoon', 'cups', 'pounds'];
-       const unitsShort = ['tbsp', 'tbsp', 'oz', 'oz', 'tsp', 'tsp', 'cup', 'pound'];
-       const units = [...unitsShort, 'kg', 'g'];
-       
-       const newIngredients = this.ingredients.map(el => {
+    parseIngredients() {
+        const unitsLong = ['tablespoons', 'tablespoon', 'ounces', 'ounce', 'teaspoons', 'teaspoon', 'cups', 'pounds'];
+        const unitsShort = ['tbsp', 'tbsp', 'oz', 'oz', 'tsp', 'tsp', 'cup', 'pound'];
+        const units = [...unitsShort, 'kg', 'g'];
+
+        const newIngredients = this.ingredients.map(el => {
             // 1. uniform units
             let ingredient = el.toLowerCase();
             unitsLong.forEach((unit, i) => {
@@ -53,7 +53,7 @@ export default class Recipe {
                 // There is a unit
                 // ex. 4 1/2 cups, arrCount is [4, 1/2] -> eval("4+1/2") -> 4.5
                 // ex. 4 cups, arrCount is [4]
-                const arrCount = arrIng.slice(0, unitIndex); 
+                const arrCount = arrIng.slice(0, unitIndex);
 
                 let count;
                 if (arrCount.length === 1) {
@@ -82,9 +82,21 @@ export default class Recipe {
                     ingredient
                 }
             }
-             
+
             return objIng;
-       });
-       this.ingredients = newIngredients;
-   }
+        });
+        this.ingredients = newIngredients;
+    }
+
+    updateServings (type) {
+        // Servings 
+        const newServings = type === 'dec' ? this.servings - 1 : this.servings + 1;
+
+        // Ingredients
+        this.ingredients.forEach(ing => {
+            ing.count *= (newServings / this.servings);
+        });
+
+        this.servings = newServings;
+    }
 }
