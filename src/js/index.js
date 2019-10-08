@@ -18,7 +18,7 @@ import { elements, renderLoader, clearLoader } from './views/base';
  * liked recipes
  */
 const state = {}
-window.state = state; // TESTING
+
 /**
  * Search Controller
  */
@@ -210,5 +210,3 @@ elements.recipe.addEventListener('click', e => {
         controlLike();
     }
 });
-
-window.l = new List();
